@@ -1,0 +1,111 @@
+<div class="mainContainer">
+    <div class="leftDiv">
+        <div class="profile">
+            <div class="avatarProfile">
+                <div>
+
+                </div>
+            </div>
+            <div class="nameProfile">
+                <p>{{userDetails['firstname']|titlecase}} {{userDetails['lastname']|titlecase}}</p>
+            </div>
+            <div class="emailProfile">
+                <p>{{userDetails['email']}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="newsFeed">
+        <div class="creationDiv">
+            <div class="inputType">
+                <input class="inputClone" placeholder="start a post" [(ngModel)]="postText" />
+            </div>
+            <div class="otherOptions">
+                <div>
+                    Photo
+                </div>
+                <div>
+                    Photo
+                </div>
+                <div>
+                    Photo
+                </div>
+                <div>
+                    <Button class="postBtn" [class]="{disabled:postText===''|| postingLoader}" (click)="post()" [disabled]="postText==='' || postingLoader">Post</Button>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 10px auto;width: 98%;">
+        <div class="postsDiv">
+            <app-loader *ngIf="postsLoader"></app-loader>
+            <div class="postList" *ngIf="!postsLoader">
+                <div class="post" *ngFor="let post of posts">
+                    <div class="topInfo">
+                        <div class="avatar">
+
+                        </div>
+                        <div class="name">
+                            <p>{{post.ownerDetails[0]['firstname']|titlecase}} {{post.ownerDetails[0]['lastname']|titlecase}}</p>
+                            <p>Posted On :{{post['postedOn']|date}}</p>
+                        </div>
+                    </div>
+                    <div class="postContent">
+                        <p>
+                            {{post['postText']}}
+                        </p>
+                    </div>
+                    <div class="postInfo">
+                        <p>
+                            <fa-icon [icon]="faThumbsUp"></fa-icon> {{post.likes.length}} . comments:{{post.comments.length}}</p>
+                    </div>
+                    <div style="margin: 10px auto;width: 90%;height: 1px;background-color: rgb(168, 168, 168);"></div>
+                    <div class="postActions">
+                        <button (click)="toggleLike(post['_id'])" [class]="{liked:post.likes.indexOf(serv.currentUser)>-1 || likedPost.indexOf(post['_id'])>-1}"> Like <fa-icon [icon]="faThumbsUp"></fa-icon></button>
+                        <button> Comment <fa-icon [icon]="faComment"></fa-icon></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightDiv">
+        <div class="news">
+            <p class="newsDivTitle">LinkedIn News</p>
+            <div class="newsList">
+                <div class="newsItem">
+                    <div class="dot"></div>
+                    <a href="#">Where Indians are spreading</a>
+                    <div class="newsTime">
+                        <p>1 day ago</p>
+                    </div>
+                </div>
+                <div class="newsItem">
+                    <div class="dot"></div>
+                    <a href="#">Where Indians are spreading</a>
+                    <div class="newsTime">
+                        <p>1 day ago</p>
+                    </div>
+                </div>
+                <div class="newsItem">
+                    <div class="dot"></div>
+                    <a href="#">Where Indians are spreading</a>
+                    <div class="newsTime">
+                        <p>1 day ago</p>
+                    </div>
+                </div>
+                <div class="newsItem">
+                    <div class="dot"></div>
+                    <a href="#">Where Indians are spreading</a>
+                    <div class="newsTime">
+                        <p>1 day ago</p>
+                    </div>
+                </div>
+                <div class="newsItem">
+                    <div class="dot"></div>
+                    <a href="#">Where Indians are spreading</a>
+                    <div class="newsTime">
+                        <p>1 day ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

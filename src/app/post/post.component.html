@@ -1,0 +1,25 @@
+<div class="post">
+    <div class="topInfo">
+        <div class="avatar">
+
+        </div>
+        <div class="name">
+            <p>{{post.ownerDetails[0]['firstname']|titlecase}} {{post.ownerDetails[0]['lastname']|titlecase}}</p>
+            <p>Posted On :{{post['postedOn']|date}}</p>
+        </div>
+    </div>
+    <div class="postContent">
+        <p>
+            {{post['postText']}}
+        </p>
+    </div>
+    <div class="postInfo">
+        <p>
+            <fa-icon [icon]="faThumbsUp"></fa-icon> {{post.likes.length}} . comments:{{post.comments.length}}</p>
+    </div>
+    <div style="margin: 10px auto;width: 90%;height: 1px;background-color: rgb(168, 168, 168);"></div>
+    <div class="postActions">
+        <button [class]="{liked:post.likes.indexOf(serv.currentUser)>-1 || serv.likedPost.indexOf(post['_id'])>-1}"> Like <fa-icon [icon]="faThumbsUp"></fa-icon></button>
+        <button> Comment <fa-icon [icon]="faComment"></fa-icon></button>
+    </div>
+</div>

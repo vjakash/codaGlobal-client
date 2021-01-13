@@ -1,0 +1,56 @@
+.mainContainer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.left {
+    width: 70%;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.resultList {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.result {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 15px;
+}
+
+.result div:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.result div:nth-child(2) p {
+    width: 100%;
+}
+
+.result div:nth-child(2) p:nth-child(1) {
+    font-size: 1.3em;
+}
+
+.result div:nth-child(2) p:nth-child(2) {
+    font-size: 0.9em;
+    color: rgb(131, 131, 131);
+}

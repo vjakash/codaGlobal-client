@@ -1,0 +1,37 @@
+<div class="container">
+    <header>
+        <p>Linded <img src="../../assets/linkedin.png" /> </p>
+        <p>Make the most of your professional life</p>
+    </header>
+    <div class="formContainer">
+        <form [formGroup]="registerData">
+            <div class="emailDiv">
+                <label for="email">First Name</label>
+                <input type="text" formControlName="firstname" [class]="{invalid:validate && !registerData.controls.firstname.valid}">
+            </div>
+            <div class="emailDiv">
+                <label for="email">Last Name</label>
+                <input type="text" formControlName="lastname" [class]="{invalid:validate && !registerData.controls.lastname.valid}">
+            </div>
+            <div class="emailDiv">
+                <label for="email">Email</label>
+                <input type="text" formControlName="email" [class]="{invalid:validate && !registerData.controls.email.valid}">
+            </div>
+            <div class="emailDiv">
+                <label for="email">Password</label>
+                <input type="password" formControlName="password" [class]="{invalid:validate && !registerData.controls.password.valid}">
+            </div>
+            <div class="alreadyHaveAccount" style="margin-top:10px;" *ngIf="errorMessage!==''">
+                <p style="color: red;">{{errorMessage}}</p>
+            </div>
+            <div class="btn">
+                <app-loader *ngIf="loader"></app-loader>
+                <button type="submit" *ngIf="!loader" (click)="register()">Agree & Join</button>
+            </div>
+            <hr style="margin:25px auto;width: 90%;">
+            <div class="alreadyHaveAccount">
+                <p>Already on LinkedIn? <span routerLink="/">Sign in</span></p>
+            </div>
+        </form>
+    </div>
+</div>

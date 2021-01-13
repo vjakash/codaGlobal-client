@@ -1,0 +1,26 @@
+<div class="mainContainer">
+    <div class="left">
+        <div style="text-align: center;margin-top: 30px;" *ngIf='loader'>
+            <app-loader></app-loader>
+        </div>
+        <div class="resultList" *ngIf='!loader'>
+            <ng-container *ngFor="let result of results">
+                <div class="result" *ngIf="result.postText===undefined">
+                    <div class="avatar">
+                    </div>
+                    <div>
+                        <p>{{result['firstname']|titlecase}} {{result['lastname']|titlecase}}</p>
+                        <p>{{result['email']}}</p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <div style="text-align: center;margin-top: 30px;" *ngIf='!loader && results.length===0'>
+            <p>There is no result found</p>
+        </div>
+    </div>
+    <div class="right">
+
+    </div>
+</div>

@@ -1,0 +1,102 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #F3F2EF;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header p:nth-child(1) {
+    width: 30%;
+    font-size: 3em;
+    color: #0A66C2;
+    margin: auto;
+}
+
+header img {
+    height: 40px !important;
+}
+
+header p:nth-child(2) {
+    margin-top: 10px;
+    font-size: 2em;
+}
+
+.formContainer {
+    width: 30%;
+    height: 500px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.emailDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.emailDiv label,
+.emailDiv input {
+    width: 100%;
+}
+
+.emailDiv label {
+    font-size: 1em;
+    color: rgb(146, 146, 146);
+}
+
+.emailDiv input {
+    border-radius: 5px;
+    height: 20px;
+    padding: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.btn button {
+    width: 70%;
+    height: 50px;
+    border-radius: 5000px;
+    border: none;
+    background-color: #005ab4;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.alreadyHaveAccount {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.alreadyHaveAccount p {
+    font-size: 1.2em;
+}
+
+.alreadyHaveAccount p span {
+    color: #0A66C2;
+    cursor: pointer;
+}
+
+.alreadyHaveAccount p span:hover {
+    text-decoration: underline;
+}
+
+.invalid {
+    border: 1px solid red !important;
+}

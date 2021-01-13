@@ -4,5 +4,25 @@
     padding: 0;
     margin: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+    background-color: #F3F2EF;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+input:focus,
+textarea,
+textarea:focus,
+input,
+input:active,
+button,
+button:focus,
+button:active {
+    outline: 0 !important;
+}

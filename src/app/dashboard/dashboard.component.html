@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="topBar">
+        <nav>
+            <div class="search">
+                <img src="../../assets/linkedin.png" alt="" routerLink="/newsfeed" style="cursor: pointer;">
+                <input type="text" placeholder="search" [(ngModel)]="searchText" (keyup)="checkEnter($event)">
+            </div>
+            <div class="navButtons">
+                <button (click)="signOut()">Logout <fa-icon [icon]="faPowerOff"></fa-icon></button>
+            </div>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+
+</div>
